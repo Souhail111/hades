@@ -170,7 +170,7 @@ client.on("message", message => {
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**
          ------------------------------
-         ${prefix}id   : You Personnal File.  
+         ${prefix}id   : Your Personnal File.  
          ${prefix}server : Server Statistics. 
          ${prefix}link : Invite to the server.   
          ------------------------------
