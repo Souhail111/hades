@@ -7,7 +7,7 @@ client.login(process.env.BOT_TOKEN);
 
 client.on('ready', function () {
     console.log('Bot Connected')
-    client.user.setGame(`Kingdom System (+cmd )`,"http://twitch.tv/Death Shop")
+    client.user.setGame(`Kingdom System (+help)`,"http://twitch.tv/Death Shop")
 })
 
 client.on('guildMemberAdd', member =>{
