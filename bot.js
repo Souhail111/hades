@@ -48,6 +48,20 @@ client.on('message', message =>{
     }
 });
 
+/*help*/
+
+client.on('message', message => {
+   if (message.content === (prefix + "help")) {
+   let embed = new Discord.RichEmbed()
+.setAuthor(message.author.username)
+.setColor("#6910dd")
+.addField("Done" , " Bot in developpement, Please ask Wavo or Wano For the commands !")
+message.channel.sendEmbed(embed);
+  }
+});
+
+
+
 /*move*/
 
 client.on('message', message => {
