@@ -11,7 +11,7 @@ client.on('ready', function () {
 })
 
 client.on('guildMemberAdd', member =>{
-    member.guild.channels.get('643044798420353024').send(' **Hello** ' + member.user + ', **Welcome to Spark** , **We are now** ' + member.guild.memberCount + ' **Members** ! :heart:');
+    member.guild.channels.get('693093387183587359').send(' **Hello** ' + member.user + ', **Welcome to Spark** , **We are now** ' + member.guild.memberCount + ' **Members** ! :heart:');
     console.log('+1');
 });
 
