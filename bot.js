@@ -55,7 +55,7 @@ client.on('message', message => {
    let embed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("#6910dd")
-.addField("Done" , " Bot in developpement, Please ask Wavo or Wano For the commands !")
+.addField("Done" , " Bot in developpement, Please ask Wavo or Wano For the commands !" , "testing" )
 message.channel.sendEmbed(embed);
   }
 });
