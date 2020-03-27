@@ -7,7 +7,7 @@ client.login(process.env.BOT_TOKEN);
 
 client.on('ready', function () {
     console.log('Bot Connected')
-    client.user.setGame(`Kingdom System (+help)`,"http://twitch.tv/Death Shop")
+    client.user.setGame(`Kingdom System (+cmd )`,"http://twitch.tv/Death Shop")
 })
 
 client.on('guildMemberAdd', member =>{
@@ -102,35 +102,6 @@ client.on('message', message => {
     
 });
 
-
-/*help*/
-
-client.on("message", message => {
-  if (message.content === (prefix + "help")) {
-   const embed = new Discord.RichEmbed() 
-       .setColor("#6910dd")
-       .setThumbnail(message.author.avatarURL)
-       .setDescription(`**
-       ------------------------------
-       ${prefix}id   : Your Personnal File.  
-       ${prefix}server : Server Statistics.  
-       ------------------------------
-       ${prefix}Ban  : Ban a Member. 
-       ${prefix}Kick : Kick a Member. 
-       ${prefix}Mute : Mute a Member.
-       ${prefix}Unmute : Unmute a Member.   
-       ${prefix}Move : Move a Member to a Voice Channel.
-       ${prefix}Goto : Move Yourself to a Voice Channel.
-       ${prefix}Clear: Delete Messages. 
-       ------------------------------
-       ${prefix}Help  : Receive thi message.
-       ------------------------------
-       
-     **  `)
- message.author.sendEmbed(embed)
- 
- }
- });  
 
 
 /*id server*/
