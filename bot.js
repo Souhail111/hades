@@ -131,15 +131,7 @@ client.on("message", message => {
  
  }
  });  
-client.on('message', message => {
-   if (message.content === (prefix + "help")) {
-   let embed = new Discord.RichEmbed()
-.setAuthor(message.author.username)
-.setColor("#6910dd")
-.addField("Done" , " You have been sent a private message !")
-message.channel.sendEmbed(embed);
-  }
-});
+
 
 /*id server*/
 
