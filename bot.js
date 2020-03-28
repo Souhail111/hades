@@ -21,7 +21,7 @@ client.on('message', message =>{
     let args = message.content.trim().split(/ +/g)
 
     if (args[0].toLocaleLowerCase() === prefix +'kick'){
-        if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send("**Adak l7mar ! ** `You dont have the permission to use this command` ! :warning: ")
+        if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send("**Adak l7mar ! ** `Ra ma3ndkch the permission to use this command a zbi` ! :warning: ")
         let member = message.mentions.members.first()
         if (!member) return message.channel.send(" `Please Mention an user` ! :warning: ")
         if (member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.owner.id) return message.channel.send("You do not have the permission to kick this member")
@@ -38,7 +38,7 @@ client.on('message', message =>{
     let args = message.content.trim().split(/ +/g)
 
     if (args[0].toLocaleLowerCase() === prefix +'ban'){
-        if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send("**Adak l7amr !** `You dont have the permission to use this command` :warning: ")
+        if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send("**Adak l7mar !** `Ra ma3ndkch the permission to use this command a zbi` :warning: ")
         let member = message.mentions.members.first()
         if (!member) return message.channel.send(" `Please Mention an user` ! :warning: ")
         if (member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.owner.id) return message.channel.send("`You do not have the permission to Ban this member` :warning: ")
