@@ -60,6 +60,32 @@ message.channel.sendEmbed(embed);
   }
 });
 
+/*blacklist*/
+
+client.on('guildMemberAdd', (mem1) => {
+             if ( (mem1.user.id == "506960370444009483") || (mem1.user.id == "") || (mem1.user.id == "") || (mem1.user.id == "") || (mem1.user.id == "")  || (mem1.user.id == "")|| (mem1.user.id == "")|| (mem1.user.id == "")|| (mem1.user.id == "")|| (mem1.user.id == "")){
+		let chan = mem1.guild.channels.find( channel => channel.id === "620781295563177985");
+                chan.send("__**Warning :warning: :**__**This member ``" + mem1.displayName + "`` is blacklisted:rotating_light: ** ");
+		mem1.ban(7) 
+                .then(() => chan.send(" ``" + mem1.displayName + " `` __**was banned :hammer:**__"));
+	        mem1.guild.owner.send("__**Warning :warning: :**__**This member** ``" + mem1.displayName + "`` ** has been banned because he is blacklisted:rotating_light: **");
+}
+});
+
+client.on('message', msg => {
+if (msg.content.startsWith(prefix + 'scann')) {
+	if(!msg.member.hasPermission('ADMINISTRATOR')) return msg.channel.send('**A L7mar, you dont have permission** `ADMINISTRATOR`🚫' );
+
+msg.guild.ban('506960370444009483').then(user => msg.channel.send(`**🚨A Blacklisted user has been detected :** __** ${user.username || user.id || user}**__ **has been banned from**🔨 __** ${msg.guild.name} **__ `));
+msg.guild.ban('').then(user => msg.channel.send(`**🚨A Blacklisted user has been detected :** __** ${user.username || user.id || user}**__ **Has been banned from**🔨 __** ${msg.guild.name} **__ `));
+msg.guild.ban('').then(user => msg.channel.send(`**🚨A Blacklisted user has been detected :** __** ${user.username || user.id || user}**__ **Has been banned from**🔨 __** ${msg.guild.name} **__ `))
+   
+	
+.then(user2 => msg.channel.send('__**The server is clean**__✅'));
+}
+});
+
+
 
 
 /*move*/
