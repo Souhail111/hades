@@ -96,7 +96,7 @@ client.on('message', message => {
  
  
  if (message.content.startsWith(prefix + "move")) {
-  if(!message.member.roles.find(role => role.name === "Move")) return message.reply("__** You dont have the ``Move`` role  **__"); 
+  if(!message.member.roles.find(role => role.name === "Move")) return message.reply("__** A Zbi, You dont have the ``Move`` role  **__"); 
   if (!chan) return message.reply("__** You need to be in a voice channel ! **__");
   if (!mention) return message.reply("__** Please, Mention a user ! **__");
   var chan2 = mention.voiceChannel;
@@ -124,7 +124,7 @@ client.on('message', message => {
   
   
   if (message.content.startsWith(prefix + "goto")) {
-   if(!message.member.roles.find(role => role.name === "Move")) return message.reply("__** You dont have the ``Move`` role **__");
+   if(!message.member.roles.find(role => role.name === "Move")) return message.reply("__** A Zbi, You dont have the ``Move`` role **__");
    if (!mention) return message.reply("__** Please, Mention a user ! **__");
    var chan2 = mention.voiceChannel;
      if (!chan2) return message.reply("__** The user you mentioned is not in a voice channel **__");
@@ -204,15 +204,15 @@ client.on('message', function(msg) {
     .setColor('#6910dd')
     .setThumbnail(msg.guild.iconURL)
     .setTitle(`Showing Details Of  **${msg.guild.name}*`)
-    .addField(':globe_with_meridians:** نوع السيرفر**',`[** __${msg.guild.region}__ **]`,true)
-    .addField(':medal:** __الرتب__**',`[** __${msg.guild.roles.size}__ **]`,true)
-    .addField(':red_circle:**__ عدد الاعضاء__**',`[** __${msg.guild.memberCount}__ **]`,true)
-    .addField(':blue_circle: **__ عدد الاعضاء الاونلاين__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
-    .addField(':pencil:**__ الرومات الكتابية__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
-    .addField(':microphone:**__ رومات الصوت__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
-    .addField(':crown:**__ الأونـر__**',`**${msg.guild.owner}**`,true)
-    .addField(':id:**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
-    .addField(':date:**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
+    .addField(':globe_with_meridians:**Server Type**',`[** __${msg.guild.region}__ **]`,true)
+    .addField(':medal:** __Ranks__**',`[** __${msg.guild.roles.size}__ **]`,true)
+    .addField(':red_circle:**__ Members __**',`[** __${msg.guild.memberCount}__ **]`,true)
+    .addField(':blue_circle: **__Online Members__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+    .addField(':pencil:**__ Texting Channels __**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+    .addField(':microphone:**__ Voice Channels __**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+    .addField(':crown:**__ Ownership __**',`**${msg.guild.owner}**`,true)
+    .addField(':id:**__ Sever ID __**',`**${msg.guild.id}**`,true)
+    .addField(':date:**__ Creation of The server __**',msg.guild.createdAt.toLocaleString())
     msg.channel.send({embed:embed});
   }
 });
@@ -239,8 +239,8 @@ client.on("message", message => {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("**Adak L7mar !** `You dont have the permission to use this command !` :warning: ")
         let member = message.mentions.members.first()
         if (!member) return message.channel.send("`I Couldn't found that member ` :warning: ")
-        if (member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.ownerID) return message.channel.send("` I can't Mute this user` :warning: ")
-        if (member.highestRole.calculatedPosition >= message.guild.me.highestRole.calculatedPosition || member.id === message.guild.ownerID) return message.channel.send("`I can't Mute this Member` :warning: ")
+        if (member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.ownerID) return message.channel.send("`Azbi, I can't Mute this user` :warning: ")
+        if (member.highestRole.calculatedPosition >= message.guild.me.highestRole.calculatedPosition || member.id === message.guild.ownerID) return message.channel.send("`Tfo, I can't Mute this Member` :warning: ")
         let muterole = message.guild.roles.find(role => role.name === 'Muted')
         if (muterole) {
             member.addRole(muterole)
@@ -266,8 +266,8 @@ client.on("message", message => {
         let member = message.mentions.members.first()
         if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("**Adak l7mar !** `You dont have the permission to use this command !` :warning: ")
         if(!member) return message.channel.send(" `I Couldn't found that member` ! :warning: ")
-        if(member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.ownerID) return message.channel.send("`You c'ant unmute this member.` :warning: ")
-        if(member.highestRole.calculatedPosition >= message.guild.me.highestRole.calculatedPosition || member.id ===  message.guild.ownerID) return message.channel.send("`I c'ant unmute this member.` :warning: ")
+        if(member.highestRole.calculatedPosition >= message.member.highestRole.calculatedPosition && message.author.id !== message.guild.ownerID) return message.channel.send("` A Zbi, You cant unmute this member.` :warning: ")
+        if(member.highestRole.calculatedPosition >= message.guild.me.highestRole.calculatedPosition || member.id ===  message.guild.ownerID) return message.channel.send("`Tfo, I cant unmute this member.` :warning: ")
         let muterole = message.guild.roles.find(role => role.name === 'Muted')
         if(muterole && member.roles.has(muterole.id)) member.removeRole(muterole)
         message.channel.send(member + ' `Has been unmuted` :warning: ')
