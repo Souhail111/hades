@@ -63,7 +63,7 @@ message.channel.sendEmbed(embed);
 /*blacklist*/
 
 client.on('guildMemberAdd', (mem1) => {
-             if ( (mem1.user.id == "653310475534336027") || (mem1.user.id == "") || (mem1.user.id == "") || (mem1.user.id == "") || (mem1.user.id == "")  || (mem1.user.id == "")|| (mem1.user.id == "")|| (mem1.user.id == "")|| (mem1.user.id == "")|| (mem1.user.id == "")){
+             if ( (mem1.user.id == "653310475534336027") || (mem1.user.id == "668564648747860001") || (mem1.user.id == "") || (mem1.user.id == "") || (mem1.user.id == "")  || (mem1.user.id == "")|| (mem1.user.id == "")|| (mem1.user.id == "")|| (mem1.user.id == "")|| (mem1.user.id == "")){
 		let chan = mem1.guild.channels.find( channel => channel.id === "620781295563177985");
                 chan.send("__**Warning :warning: :**__**This member ``" + mem1.displayName + "`` is blacklisted:rotating_light: ** ");
 		mem1.ban(7) 
@@ -77,7 +77,7 @@ if (msg.content.startsWith(prefix + 'scann')) {
 	if(!msg.member.hasPermission('ADMINISTRATOR')) return msg.channel.send('**A L7mar, you dont have permission** `ADMINISTRATOR`🚫' );
 
 msg.guild.ban('653310475534336027').then(user => msg.channel.send(`**🚨A Blacklisted user has been detected :** __** ${user.username || user.id || user}**__ **has been banned from**🔨 __** ${msg.guild.name} **__ `));
-msg.guild.ban('').then(user => msg.channel.send(`**🚨A Blacklisted user has been detected :** __** ${user.username || user.id || user}**__ **Has been banned from**🔨 __** ${msg.guild.name} **__ `));
+msg.guild.ban('668564648747860001').then(user => msg.channel.send(`**🚨A Blacklisted user has been detected :** __** ${user.username || user.id || user}**__ **Has been banned from**🔨 __** ${msg.guild.name} **__ `));
 msg.guild.ban('').then(user => msg.channel.send(`**🚨A Blacklisted user has been detected :** __** ${user.username || user.id || user}**__ **Has been banned from**🔨 __** ${msg.guild.name} **__ `))
    
 	
